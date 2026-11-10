@@ -1,0 +1,14 @@
+# Личные настройки (может содержать токен бота)
+meet_config.json
+
+# Записи, логи, состояние
+recordings/
+logs/
+state/
+*.log
+*_log.txt
+*.bak
+*.bak-*
+
+__pycache__/
+*.pyc
