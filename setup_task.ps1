@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Continue'
+﻿$ErrorActionPreference = 'Continue'
 $log = Join-Path $PSScriptRoot 'logs\setup_task_log.txt'
 $logDir = Split-Path $log -Parent
 if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }

@@ -11,7 +11,7 @@ echo ==== notify_test ==== > "%LOG%"
 echo data: %DATE% %TIME% >> "%LOG%"
 echo. >> "%LOG%"
 
-"%PY%" -c "import sys,json; sys.path.insert(0,r'%~dp0.'); import notify; cfg=json.load(open(r'%~dp0meet_config.json',encoding='utf-8')); notify.self_test(cfg)" >> "%LOG%" 2>&1
+"%PY%" -c "import sys,json; sys.path.insert(0,r'%~dp0.'); import notify; import os; f=r'%~dp0meet_config.json'; cfg=json.load(open(f,encoding='utf-8-sig')) if os.path.exists(f) else {}; notify.self_test(cfg)" >> "%LOG%" 2>&1
 
 echo. >> "%LOG%"
 echo EXITCODE: %ERRORLEVEL% >> "%LOG%"
